@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include kalachar *.css
+recursive-include kalachar *.csv
+recursive-include kalachar *.html
+recursive-include kalachar *.ico
+recursive-include kalachar *.js
+recursive-include kalachar *.json
+recursive-include kalachar *.md
+recursive-include kalachar *.png
+recursive-include kalachar *.py
+recursive-include kalachar *.svg
+recursive-include kalachar *.txt
+recursive-exclude kalachar *.pyc
