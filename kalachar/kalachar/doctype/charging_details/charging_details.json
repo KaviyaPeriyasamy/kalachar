@@ -1,0 +1,61 @@
+{
+    "actions": [],
+    "creation": "2020-02-03 22:19:59.763680",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "dance_type",
+     "purpose",
+     "timing",
+     "advance_amount",
+     "full_amount"
+    ],
+    "fields": [
+     {
+      "fieldname": "timing",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Timing",
+      "options": "\nPer Hour\nPer Day\nPer Month"
+     },
+     {
+      "fieldname": "advance_amount",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Advance Amount"
+     },
+     {
+      "fieldname": "full_amount",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Full Amount"
+     },
+     {
+      "fieldname": "dance_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Dance Type",
+      "options": "\nBamber dance\nBharatanatyam\nBommalattam or puppet show\nChakkai Attam\nDevaraattam\nKamandi or Kaman Pandigai\nKai Silambu Attam\nKazhi Attam or Kolattam\nKazhai Kothu\nPoi Kal attam\nKummi\nKaragattam\nMayil Attam or Peacock dance\nOttan Koothu\nOyilattam\nOyil Kummi\nSnake Dance\nArtificial Horse Dance\nTiger Dance\nShattam dance\nParai Attam\nKoothu\nUrummi Attam\nVillu Pattu"
+     },
+     {
+      "fieldname": "purpose",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Purpose",
+      "options": "\nCulturals\nWorkshops"
+     }
+    ],
+    "istable": 1,
+    "links": [],
+    "modified": "2020-02-03 22:45:37.402642",
+    "modified_by": "Administrator",
+    "module": "kalachar",
+    "name": "Charging Details",
+    "owner": "Administrator",
+    "permissions": [],
+    "quick_entry": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+   }

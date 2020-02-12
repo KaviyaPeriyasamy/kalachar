@@ -1,0 +1,73 @@
+{
+    "actions": [],
+    "creation": "2020-02-03 22:53:08.881989",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+     "from_user",
+     "to_user",
+     "booking_status",
+     "amended_from"
+    ],
+    "fields": [
+     {
+      "fieldname": "from_user",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "From User",
+      "options": "User Information",
+      "reqd": 1
+     },
+     {
+      "fieldname": "to_user",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "To User",
+      "options": "User Information",
+      "reqd": 1
+     },
+     {
+      "fieldname": "booking_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Booking Status",
+      "options": "\nBooking Request\nBooking Accepted\nBooking Rejected\nTransaction Closed",
+      "reqd": 1
+     },
+     {
+      "fieldname": "amended_from",
+      "fieldtype": "Link",
+      "label": "Amended From",
+      "no_copy": 1,
+      "options": "Booking Status",
+      "print_hide": 1,
+      "read_only": 1
+     }
+    ],
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2020-02-03 23:37:52.063313",
+    "modified_by": "Administrator",
+    "module": "kalachar",
+    "name": "Booking Status",
+    "owner": "Administrator",
+    "permissions": [
+     {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+     }
+    ],
+    "quick_entry": 1,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+   }
