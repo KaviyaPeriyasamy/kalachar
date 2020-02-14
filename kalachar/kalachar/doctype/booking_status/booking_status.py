@@ -13,7 +13,6 @@ class BookingStatus(Document):
 		message=get_user_details(self)
 		recipient=[self.to_user]
 		send_sms(recipient,cstr(message))
-		print(send_sms(recipient,cstr(message)))
 def get_user_details(self):
 	from_user_doc=frappe.get_doc("User Information",self.from_user)
 	to_user_doc=frappe.get_doc("User Information",self.to_user)
