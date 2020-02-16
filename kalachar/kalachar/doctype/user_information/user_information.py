@@ -33,6 +33,7 @@ def get_dancer_detail(type_,purpose):
 				category['advance_amount']=charges.advance_amount
 				category['full_amount']=charges.full_amount
 		dancers.append(category)
+	print(dancers)
 	return dancers
 @frappe.whitelist(allow_guest=True)
 def create_new_user(org_name,org_phone,org_addr,user_name,user_phone,password):
