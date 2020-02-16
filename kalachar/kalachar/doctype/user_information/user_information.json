@@ -65,8 +65,7 @@
    "fieldname": "user_type",
    "fieldtype": "Select",
    "label": "User Type",
-   "options": "\nFor booking\nTo accept booking",
-   "reqd": 1
+   "options": "\nFor booking\nTo accept booking"
   },
   {
    "fieldname": "column_break_2",
@@ -92,7 +91,7 @@
   }
  ],
  "links": [],
- "modified": "2020-02-13 18:12:01.532177",
+ "modified": "2020-02-16 23:52:32.115488",
  "modified_by": "Administrator",
  "module": "kalachar",
  "name": "User Information",

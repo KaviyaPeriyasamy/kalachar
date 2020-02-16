@@ -8,7 +8,7 @@ from frappe.model.document import Document
 
 class UserInformation(Document):
 	pass
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def authenticate_user(phone_no,password):
 	s=[]
 	User_information_doc=frappe.get_doc("User Information",phone_no)
@@ -17,7 +17,7 @@ def authenticate_user(phone_no,password):
 	else:
 		s.append("not allowed")
 	return s
-@frappe.whitelist()
+@frappe.whitelist(allow_guest=True)
 def get_dancer_detail(type_,purpose):
 	category={}
 	dancers=[]
@@ -33,7 +33,23 @@ def get_dancer_detail(type_,purpose):
 				category['advance_amount']=charges.advance_amount
 				category['full_amount']=charges.full_amount
 		dancers.append(category)
-	print(dancers)
 	return dancers
+@frappe.whitelist(allow_guest=True)
+def create_new_user(org_name,org_phone,org_addr,user_name,user_phone,password):
+	msg=[]
+	if frappe.db.exists("User Information",user_phone):
+		msg.append("Already Registered")
+	else:
+		user_doc=frappe.new_doc("User Information")
+		user_doc.organization_name=org_name
+		user_doc.organization_phone_number=org_phone
+		user_doc.organization_address=org_addr
+		user_doc.user_name=user_name
+		user_doc.user_phone_number=user_phone
+		user_doc.password=password
+		user_doc.save()
+		msg.append("Registered Successfully")
+	return msg
+
 
 

@@ -9,45 +9,38 @@
   "from_user",
   "to_user",
   "booking_status",
-  "amended_from"
+  "bargain"
  ],
  "fields": [
   {
    "fieldname": "from_user",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "From User",
-   "options": "User Information",
    "reqd": 1
   },
   {
    "fieldname": "to_user",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "To User",
-   "options": "User Information",
    "reqd": 1
   },
   {
    "fieldname": "booking_status",
-   "fieldtype": "Select",
+   "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Booking Status",
-   "options": "\nBooking Request\nBooking Accepted\nBooking Rejected\nTransaction Closed",
    "reqd": 1
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Booking Status",
-   "print_hide": 1,
-   "read_only": 1
+   "fieldname": "bargain",
+   "fieldtype": "Data",
+   "label": "Bargain Amount"
   }
  ],
  "links": [],
- "modified": "2020-02-13 08:07:29.862669",
+ "modified": "2020-02-16 23:02:51.193848",
  "modified_by": "Administrator",
  "module": "kalachar",
  "name": "Booking Status",
