@@ -19,10 +19,10 @@ def authenticate_user(phone_no,password):
 	return s
 @frappe.whitelist(allow_guest=True)
 def get_dancer_detail(type_,purpose):
-	category={}
 	dancers=[]
 	dancer_list=frappe.get_all("User Information",filters={'dance_type':type_,'purpose':purpose})
 	for dancer in dancer_list:
+		category={}
 		dancer_doc=frappe.get_doc("User Information",dancer.name)
 		category['org_name']=dancer_doc.organization_name
 		category['org_addr']=dancer_doc.organization_address
@@ -33,7 +33,6 @@ def get_dancer_detail(type_,purpose):
 				category['advance_amount']=charges.advance_amount
 				category['full_amount']=charges.full_amount
 		dancers.append(category)
-	print(dancers)
 	return dancers
 @frappe.whitelist(allow_guest=True)
 def create_new_user(org_name,org_phone,org_addr,user_name,user_phone,password):
