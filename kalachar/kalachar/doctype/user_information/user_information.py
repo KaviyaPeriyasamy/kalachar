@@ -10,28 +10,28 @@ class UserInformation(Document):
 	pass
 @frappe.whitelist(allow_guest=True)
 def authenticate_user(phone_no,password):
-	s=[]
+	status=[]
 	User_information_doc=frappe.get_doc("User Information",phone_no)
 	if password==User_information_doc.password:
-		s.append("allowed")
+		status.append("allowed")
 	else:
-		s.append("not allowed")
-	return s
+		status.append("not allowed")
+	return status
 @frappe.whitelist(allow_guest=True)
-def get_dancer_detail(type_,purpose):
+def get_dancer_detail(usertype):
 	dancers=[]
-	dancer_list=frappe.get_all("User Information",filters={'dance_type':type_,'purpose':purpose})
+	dancer_list=frappe.get_all("User Information",filters={'user_type':usertype})
 	for dancer in dancer_list:
 		category={}
 		dancer_doc=frappe.get_doc("User Information",dancer.name)
 		category['org_name']=dancer_doc.organization_name
 		category['org_addr']=dancer_doc.organization_address
 		category['org_phone']=dancer_doc.organization_phone_number
-		for charges in dancer_doc.charging_details:
-			if charges.purpose==purpose and charges.dance_type==type_:
-				category['timing']=charges.timing
-				category['advance_amount']=charges.advance_amount
-				category['full_amount']=charges.full_amount
+		# for charges in dancer_doc.charging_details:
+		# 	if charges.purpose==purpose and charges.dance_type==type_:
+		# 		category['timing']=charges.timing
+		# 		category['advance_amount']=charges.advance_amount
+		# 		category['full_amount']=charges.full_amount
 		dancers.append(category)
 	return dancers
 @frappe.whitelist(allow_guest=True)
