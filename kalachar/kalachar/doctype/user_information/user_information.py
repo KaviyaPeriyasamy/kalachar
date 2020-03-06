@@ -50,6 +50,17 @@ def create_new_user(org_name,org_phone,org_addr,user_name,user_phone,password):
 		user_doc.save()
 		msg.append("Registered Successfully")
 	return msg
-
+@frappe.whitelist(allow_guest=True)
+def get_filter_details(category):
+	dancers=[]
+	dancer_list=frappe.get_all("User Information",filters={'dance_type':category})
+	for dancer in dancer_list:
+		category={}
+		dancer_doc=frappe.get_doc("User Information",dancer.name)
+		category['org_name']=dancer_doc.organization_name
+		category['org_addr']=dancer_doc.organization_address
+		category['org_phone']=dancer_doc.organization_phone_number
+		dancers.append(category)
+	return dancers
 
 
