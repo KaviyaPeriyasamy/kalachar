@@ -79,10 +79,14 @@ def get_selected_dancer_details(org_name,org_phone,org_addr):
 	return dancers	
 
 
-# @frappe.whitelist(allow_guest=True)
-# def get_profile_details(user_phone):
-# 	dancers=[]
-# 	category={}
-# 	user_doc=frappe.get_doc("User Information",user_phone);
-# 	category['org_name']=user_doc.org_name
-# 	category['org_phone']=user_doc.org_phone
+@frappe.whitelist(allow_guest=True)
+def get_profile_details(user_phone):
+	users=[]
+	category={}
+	user_doc=frappe.get_doc("User Information",user_phone);
+	category['org_name']=user_doc.org_name
+	category['org_phone']=user_doc.org_phone
+	category['user_name']=user_doc.user_name
+	category['user_phone']=user_doc.user_phone_number
+	users.append(category)
+	return users
