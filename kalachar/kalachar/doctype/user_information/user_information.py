@@ -72,10 +72,17 @@ def get_selected_dancer_details(org_name,org_phone,org_addr):
 		dancer_doc=frappe.get_doc("User Information",dancer.name)
 		category['user_name']=dancer_doc.user_name
 		category['user_phone']=dancer_doc.user_phone_number
-		category['details']=[]
+		category['details']=''
 		for details in dancer_doc.charging_details:
-			category['details'].extend([details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+str(details.advance_amount)+","+"Final Amount"+":"+" "+str(details.full_amount)+"."])
+			category['details']+=" "+details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+str(details.advance_amount)+","+"Final Amount"+":"+" "+str(details.full_amount)+"."
 		dancers.append(category)
 	return dancers	
 
 
+# @frappe.whitelist(allow_guest=True)
+# def get_profile_details(user_phone):
+# 	dancers=[]
+# 	category={}
+# 	user_doc=frappe.get_doc("User Information",user_phone);
+# 	category['org_name']=user_doc.org_name
+# 	category['org_phone']=user_doc.org_phone
