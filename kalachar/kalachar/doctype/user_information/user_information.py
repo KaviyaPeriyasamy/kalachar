@@ -63,4 +63,19 @@ def get_filter_details(category):
 		dancers.append(category)
 	return dancers
 
+@frappe.whitelist(allow_guest=True)
+def get_selected_dancer_details(org_name,org_phone,org_addr):
+	dancers=[]
+	dancer_list=frappe.get_all("User Information",filters={'organization_name': org_name,'organization_phone_number':org_phone,'organization_address':org_addr})
+	for dancer in dancer_list:
+		category={}
+		dancer_doc=frappe.get_doc("User Information",dancer.name)
+		category['user_name']=dancer_doc.user_name
+		category['user_phone']=dancer_doc.user_phone
+		category['details']=[]
+		for details in dancer_doc.charging_details:
+			category['details'].extend([details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+details.advance_amount+","+"Final Amount"+":"+" "+details.full_amount+"."])
+		dancers.append(category)
+	return dancers	
+
 
