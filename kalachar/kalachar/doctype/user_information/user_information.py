@@ -74,7 +74,7 @@ def get_selected_dancer_details(org_name,org_phone,org_addr):
 		category['user_phone']=dancer_doc.user_phone_number
 		category['details']=[]
 		for details in dancer_doc.charging_details:
-			category['details'].extend([details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+details.advance_amount+","+"Final Amount"+":"+" "+details.full_amount+"."])
+			category['details'].extend([details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+str(details.advance_amount)+","+"Final Amount"+":"+" "+str(details.full_amount)+"."])
 		dancers.append(category)
 	return dancers	
 
