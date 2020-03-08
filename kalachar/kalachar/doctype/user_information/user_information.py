@@ -71,7 +71,7 @@ def get_selected_dancer_details(org_name,org_phone,org_addr):
 		category={}
 		dancer_doc=frappe.get_doc("User Information",dancer.name)
 		category['user_name']=dancer_doc.user_name
-		category['user_phone']=dancer_doc.user_phone
+		category['user_phone']=dancer_doc.user_phone_number
 		category['details']=[]
 		for details in dancer_doc.charging_details:
 			category['details'].extend([details.purpose+"-"+details.timing+"-"+"Advance"+":"+" "+details.advance_amount+","+"Final Amount"+":"+" "+details.full_amount+"."])
