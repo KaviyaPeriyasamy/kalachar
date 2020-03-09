@@ -10,10 +10,7 @@ from frappe.utils import flt, cstr
 
 class BookingStatus(Document):
 	def validate(self):
-		message=''
-		message=get_user_details(self)
-		recipient=[self.to_user]
-		send_sms(recipient,cstr(message))
+		send_sms([self.to_user],cstr(get_user_details(self)))
 def get_user_details(self):
 	from_user_doc=frappe.get_doc("User Information",self.from_user)
 	to_user_doc=frappe.get_doc("User Information",self.to_user)
