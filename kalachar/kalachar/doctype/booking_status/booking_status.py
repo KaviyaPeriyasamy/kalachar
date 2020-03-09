@@ -10,6 +10,7 @@ from frappe.utils import flt, cstr
 
 class BookingStatus(Document):
 	def validate(self):
+		message=''
 		message=get_user_details(self)
 		recipient=[self.to_user]
 		send_sms(recipient,cstr(message))
@@ -17,7 +18,7 @@ def get_user_details(self):
 	from_user_doc=frappe.get_doc("User Information",self.from_user)
 	to_user_doc=frappe.get_doc("User Information",self.to_user)
 	if self.booking_status=='Booking Request':
-		message=f"Hello {to_user_doc.user_name}, You have {self.booking_status} from {from_user_doc.user_name} {from_user_doc.user_phone_number} for {self.purpose} with the requesting amount of {self.bargain},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} on {self.date},timing:{self.time}.Thank You, Have a Nice day!"
+		message=f"Hello {to_user_doc.user_name}, You have {self.booking_status} from {from_user_doc.user_name} {from_user_doc.user_phone_number} for {self.purpose} with the requesting amount of {self.bargain},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} on {self.date},timing: {self.time}. Thank You, Have a Nice day!"
 	if self.booking_status=='Booking Accepted':
 		message=f"Hello {to_user_doc.user_name}, Your {self.booking_status} from {from_user_doc.user_name},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} Thank You, Have a Nice day!"
 	if self.booking_status=='Booking Rejected':
