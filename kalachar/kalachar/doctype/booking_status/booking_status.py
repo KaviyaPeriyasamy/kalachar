@@ -12,6 +12,7 @@ class BookingStatus(Document):
 	def validate(self):
 		send_sms([self.to_user],cstr(get_user_details(self)))
 def get_user_details(self):
+	message=''
 	from_user_doc=frappe.get_doc("User Information",self.from_user)
 	to_user_doc=frappe.get_doc("User Information",self.to_user)
 	if self.booking_status=='Booking Request':
