@@ -33,6 +33,7 @@ def send_request(from_user,phone,status,purpose,bargain_amount):
 		doc_.booking_status=status
 		doc_.purpose=purpose
 		doc_.bargain_amount=bargain_amount
+		doc_.booking_status='Booking Request'
 		doc_.save()
 		request.append("allowed")
 	else:
