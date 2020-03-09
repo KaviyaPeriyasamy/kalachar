@@ -17,14 +17,14 @@ def get_user_details(self):
 	from_user_doc=frappe.get_doc("User Information",self.from_user)
 	to_user_doc=frappe.get_doc("User Information",self.to_user)
 	if self.booking_status=='Booking Request':
-		message=f"Hello {to_user_doc.user_name}, You have {self.booking_status} from {from_user_doc.user_name} {from_user_doc.user_phone_number} for {self.purpose} with the requesting amount of {self.bargain},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} Thank You, Have a Nice day!"
+		message=f"Hello {to_user_doc.user_name}, You have {self.booking_status} from {from_user_doc.user_name} {from_user_doc.user_phone_number} for {self.purpose} with the requesting amount of {self.bargain},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} on {self.date} {self.time}.Thank You, Have a Nice day!"
 	if self.booking_status=='Booking Accepted':
 		message=f"Hello {to_user_doc.user_name}, Your {self.booking_status} from {from_user_doc.user_name},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} Thank You, Have a Nice day!"
 	if self.booking_status=='Booking Rejected':
 		message=f"Hello {to_user_doc.user_name}, Your {self.booking_status} from {from_user_doc.user_name},{from_user_doc.organization_name},{from_user_doc.organization_address},{from_user_doc.organization_phone_number} Thank You, Have a Nice day!"
 	return message
 @frappe.whitelist(allow_guest=True)
-def send_request(from_user,phone,status,purpose,bargain_amount):
+def send_request(from_user,phone,status,purpose,bargain_amount,date,time):
 	request=[]
 	if from_user and phone and status:
 		doc_=frappe.new_doc("Booking Status")
@@ -33,6 +33,8 @@ def send_request(from_user,phone,status,purpose,bargain_amount):
 		doc_.booking_status=status
 		doc_.purpose=purpose
 		doc_.bargain=bargain_amount
+		doc_.date=date
+		doc_.time=time
 		doc_.save()
 		request.append("allowed")
 	else:
