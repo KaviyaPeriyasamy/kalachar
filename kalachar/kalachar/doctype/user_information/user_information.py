@@ -84,8 +84,8 @@ def get_profile_details(user_phone):
 	users=[]
 	category={}
 	user_doc=frappe.get_doc("User Information",user_phone);
-	category['org_name']=user_doc.org_name
-	category['org_phone']=user_doc.org_phone
+	category['org_name']=user_doc.organization_name
+	category['org_phone']=user_doc.organization_phone_number
 	category['user_name']=user_doc.user_name
 	category['user_phone']=user_doc.user_phone_number
 	users.append(category)
