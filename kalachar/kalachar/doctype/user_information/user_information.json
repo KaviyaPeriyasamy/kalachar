@@ -17,51 +17,47 @@
   "user_phone_number",
   "user_type",
   "section_break_11",
-  "charging_details"
+  "charging_details",
+  "amended_from"
  ],
  "fields": [
   {
    "fieldname": "organization_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Organization Name",
-   "reqd": 1
+   "label": "Organization Name"
   },
   {
    "fieldname": "organization_address",
    "fieldtype": "Small Text",
    "in_list_view": 1,
-   "label": "Organization Address",
-   "reqd": 1
+   "label": "Organization Address"
   },
   {
    "fieldname": "organization_phone_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Organization Phone Number",
-   "reqd": 1
+   "label": "Organization Phone Number"
   },
   {
    "fieldname": "user_name",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "User Name",
-   "reqd": 1
+   "label": "Name"
   },
   {
    "fieldname": "password",
    "fieldtype": "Data",
-   "label": "Password",
-   "reqd": 1
+   "label": "Password"
   },
   {
    "fieldname": "user_phone_number",
    "fieldtype": "Data",
-   "label": "User Phone Number",
-   "reqd": 1,
+   "label": "Phone Number",
    "unique": 1
   },
   {
+   "default": "For booking",
    "fieldname": "user_type",
    "fieldtype": "Select",
    "label": "User Type",
@@ -88,10 +84,19 @@
   {
    "fieldname": "section_break_11",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "User Information",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "links": [],
- "modified": "2020-02-16 23:52:32.115488",
+ "modified": "2020-05-07 23:20:30.352800",
  "modified_by": "Administrator",
  "module": "kalachar",
  "name": "User Information",
@@ -108,8 +113,19 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
   }
  ],
+ "quick_entry": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "track_changes": 1
