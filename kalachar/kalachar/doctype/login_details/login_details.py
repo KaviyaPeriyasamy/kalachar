@@ -150,20 +150,24 @@ def create_new_user(mobile_number, login_attempt_id):
 		"roles":[]
 	})
 	user_doc.save()
-	create_user_info(user_doc.name, user_doc.mobile_no)
-	return user_doc.name
+	if user_doc:
+		create_user_info(user_doc.name, user_doc.mobile_no)
+		return user_doc.name
 
 def create_user_info(user_doc, mobile_no):
-	existing_info = frappe.db.get_value('User Information', {'user_phone_number': mobile_no}, 'name')
-	if not existing_info:
-		new_info = frappe.new_doc('User Information')
-		new_info.user = user_doc
-		new_info.user_phone_number = mobile_no
-		new_info.save()
+	if mobile_no:
+		existing_info = frappe.db.get_value('User Information', {'user_phone_number': mobile_no}, 'name')
+		if not existing_info:
+			new_info = frappe.new_doc('User Information')
+			new_info.user = user_doc
+			new_info.user_phone_number = mobile_no
+			new_info.save()
 
 def get_info_from_user(user, get_as_doc=False):
-	existing_info = frappe.db.get_value('User Information', {'user': user}, 'name')
-	if not get_as_doc:
-		return existing_info
-	existing_info_doc = frappe.get_doc('User Information', existing_info)
-	return existing_info, existing_info_doc
+	if user:
+		existing_info = frappe.db.get_value('User Information', {'user': user}, 'name')
+		if existing_info:
+			if not get_as_doc:
+				return existing_info
+			existing_info_doc = frappe.get_doc('User Information', existing_info)
+			return existing_info, existing_info_doc
