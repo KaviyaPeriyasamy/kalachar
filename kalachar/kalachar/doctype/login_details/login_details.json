@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "creation": "2020-09-10 14:16:10.635419",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "mobile_number",
+  "otp_information_section",
+  "generated_otp",
+  "column_break_4",
+  "generated_time",
+  "section_break_6",
+  "resend_count",
+  "column_break_8",
+  "login_status",
+  "failed_attempt"
+ ],
+ "fields": [
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "otp_information_section",
+   "fieldtype": "Section Break",
+   "label": "OTP Information"
+  },
+  {
+   "fieldname": "generated_otp",
+   "fieldtype": "Data",
+   "label": "Generated OTP"
+  },
+  {
+   "fieldname": "generated_time",
+   "fieldtype": "Data",
+   "label": "Generated Time"
+  },
+  {
+   "fieldname": "resend_count",
+   "fieldtype": "Int",
+   "label": "Resend count"
+  },
+  {
+   "fieldname": "login_status",
+   "fieldtype": "Data",
+   "label": "Login Status"
+  },
+  {
+   "fieldname": "failed_attempt",
+   "fieldtype": "Table",
+   "label": "Failed Attempt",
+   "options": "Failed Attempt"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2020-09-10 14:17:49.609235",
+ "modified_by": "Administrator",
+ "module": "kalachar",
+ "name": "Login Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

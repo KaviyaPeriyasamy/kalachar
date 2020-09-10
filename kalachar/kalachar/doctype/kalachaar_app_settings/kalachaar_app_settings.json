@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "creation": "2020-09-10 14:29:49.088419",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "default_user",
+  "msg91_details_section",
+  "msg91_template_id",
+  "column_break_4",
+  "msg91_auth_key",
+  "otp_details_section",
+  "resend_otp_limit",
+  "otp_expiry_limit_in_mins",
+  "max_otp_attempts"
+ ],
+ "fields": [
+  {
+   "fieldname": "default_user",
+   "fieldtype": "Link",
+   "label": "Default User",
+   "options": "User"
+  },
+  {
+   "fieldname": "msg91_details_section",
+   "fieldtype": "Section Break",
+   "label": "Msg91 Details"
+  },
+  {
+   "fieldname": "msg91_template_id",
+   "fieldtype": "Data",
+   "label": "Msg91 Template Id"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "msg91_auth_key",
+   "fieldtype": "Data",
+   "label": "Msg91 Auth Key"
+  },
+  {
+   "fieldname": "otp_details_section",
+   "fieldtype": "Section Break",
+   "label": "OTP Details"
+  },
+  {
+   "fieldname": "resend_otp_limit",
+   "fieldtype": "Int",
+   "label": "Resend OTP Limit"
+  },
+  {
+   "fieldname": "otp_expiry_limit_in_mins",
+   "fieldtype": "Int",
+   "label": "OTP Expiry Limit (In Mins)"
+  },
+  {
+   "fieldname": "max_otp_attempts",
+   "fieldtype": "Int",
+   "label": "Max OTP Attempts"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2020-09-10 14:29:49.088419",
+ "modified_by": "Administrator",
+ "module": "kalachar",
+ "name": "Kalachaar App Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
