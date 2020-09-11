@@ -35,21 +35,21 @@ def get_dancer_detail(usertype):
 		dancers.append(category)
 	return dancers
 @frappe.whitelist(allow_guest=True)
-def create_new_user(org_name,org_phone,org_addr,user_name,user_phone,password):
-	msg=[]
-	if frappe.db.exists("User Information",user_phone):
-		msg.append("Already Registered")
-	else:
-		user_doc=frappe.new_doc("User Information")
-		user_doc.organization_name=org_name
-		user_doc.organization_phone_number=org_phone
-		user_doc.organization_address=org_addr
-		user_doc.user_name=user_name
-		user_doc.user_phone_number=user_phone
-		user_doc.password=password
-		user_doc.save()
-		msg.append("Registered Successfully")
-	return msg
+def create_new_user(data):
+	frappe.set_user('Administrator')
+	existing_info = frappe.db.get_value('User Information', {'user_phone_number': '8428849121'}, 'name')
+	user_doc=frappe.get_doc("User Information", existing_info)
+	user_doc.organization_name=data['org_name']
+	user_doc.organization_address=data['org_address']
+	user_doc.name1=data['name1']
+	if 'dance_category' in data:
+		user_doc.account_info = data['dance_category'] + data["bank_type"] + data["bank_details"]
+	user_doc.save()
+	return {
+			"status": "open"
+		}
+	
+
 @frappe.whitelist(allow_guest=True)
 def get_filter_details(category):
 	dancers=[]
