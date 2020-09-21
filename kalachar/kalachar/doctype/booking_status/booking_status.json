@@ -10,13 +10,12 @@
   "to_user",
   "booking_status",
   "bargain",
-  "purpose",
   "date",
-  "time"
+  "time",
+  "purpose"
  ],
  "fields": [
   {
-   "bold": 1,
    "fieldname": "from_user",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -43,11 +42,6 @@
    "label": "Bargain Amount"
   },
   {
-   "fieldname": "purpose",
-   "fieldtype": "Data",
-   "label": "Purpose"
-  },
-  {
    "fieldname": "date",
    "fieldtype": "Data",
    "label": "Date"
@@ -56,10 +50,15 @@
    "fieldname": "time",
    "fieldtype": "Data",
    "label": "Time"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Data",
+   "label": "Purpose"
   }
  ],
  "links": [],
- "modified": "2020-05-07 19:41:02.780459",
+ "modified": "2020-09-15 23:27:10.375046",
  "modified_by": "Administrator",
  "module": "kalachar",
  "name": "Booking Status",
@@ -74,29 +73,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Guest",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Administrator",
    "share": 1,
    "write": 1
   }

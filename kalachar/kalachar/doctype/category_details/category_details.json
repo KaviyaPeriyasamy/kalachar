@@ -1,0 +1,90 @@
+{
+ "actions": [],
+ "creation": "2020-09-14 23:33:43.703291",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user_information",
+  "dance_type",
+  "workshop_timing",
+  "workshop_advance_amount",
+  "workshop_full_amount",
+  "culturals_timing",
+  "culturals_advance_amount",
+  "culturals_full_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "user_information",
+   "fieldtype": "Link",
+   "label": "User Information",
+   "options": "User Information"
+  },
+  {
+   "fieldname": "dance_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Dance Type",
+   "options": "\nBamber dance\nBharatanatyam\nBommalattam or puppet show\nChakkai Attam\nDevaraattam\nKamandi or Kaman Pandigai\nKai Silambu Attam\nKazhi Attam or Kolattam\nKazhai Kothu\nPoi Kal attam\nKummi\nKaragattam\nMayil Attam or Peacock dance\nOttan Koothu\nOyilattam\nOyil Kummi\nSnake Dance\nArtificial Horse Dance\nTiger Dance\nShattam dance\nParai Attam\nKoothu\nUrummi Attam\nVillu Pattu"
+  },
+  {
+   "fieldname": "workshop_timing",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Workshop Timing",
+   "options": "\nPer Hour\nPer Day\nPer Month"
+  },
+  {
+   "fieldname": "workshop_advance_amount",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Workshop Advance Amount"
+  },
+  {
+   "fieldname": "workshop_full_amount",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Workshop Full Amount"
+  },
+  {
+   "fieldname": "culturals_timing",
+   "fieldtype": "Select",
+   "label": "Culturals Timing",
+   "options": "\nPer Hour\nPer Day\nPer Month"
+  },
+  {
+   "fieldname": "culturals_advance_amount",
+   "fieldtype": "Int",
+   "label": "Culturals Advance Amount"
+  },
+  {
+   "fieldname": "culturals_full_amount",
+   "fieldtype": "Int",
+   "label": "Culturals Full Amount"
+  }
+ ],
+ "links": [],
+ "modified": "2020-09-15 19:32:12.683239",
+ "modified_by": "Administrator",
+ "module": "kalachar",
+ "name": "Category Details",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
